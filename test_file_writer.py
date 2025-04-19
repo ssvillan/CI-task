@@ -9,11 +9,11 @@ class TestFileWriter(unittest.TestCase):
         
         write_to_file(test_filename, test_text)
         
-        self,assertTrue(os.path.exists(test_filename))
+        self,assertTrue(os.path.exists(test_filename)),"File was not created"
         
         with open(test_filename, 'r') as f:
             content = f.read()
-            self.assertEqual(content, test_text)
+            self.assertEqual(content, test_text),"File content do not match"
             os.remove(test_filename)
 
 if __name__ == '__main__':
